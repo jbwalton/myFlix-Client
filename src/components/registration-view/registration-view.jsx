@@ -4,8 +4,6 @@ import React, { useState } from 'react';
 
 // React Bootstrap
 import { Form, Button, Container } from 'react-bootstrap';
-
-// SCSS Import
 import "./registration-view.scss"
 export function RegistrationView(props) {
   const [ username, setUsername ] = useState('');
@@ -30,7 +28,6 @@ export function RegistrationView(props) {
       console.log('error registering the user')
     });
 };
-
   return (
     <Container>
       <Form>
@@ -41,7 +38,6 @@ export function RegistrationView(props) {
             We'll never share your email with anyone else.
           </Form.Text>
         </Form.Group>
-
         <Form.Group controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
           <Form.Control type="password" placeholder="Password" />
