@@ -5,7 +5,7 @@ import { LoginView } from '../login-view/login-view';
 import { MovieCard } from '../movie-card/movie-card';
 import { MovieView } from "../movie-view/movie-view";
 import { RegistrationView } from "../registration-view/registration-view";
-import "./main-view.scss";
+
 // React Bootstrap 
 import { Navbar, Container, Nav, Row, Col } from 'react-bootstrap';
 export class MainView extends React.Component {
@@ -61,17 +61,7 @@ export class MainView extends React.Component {
 
     return (
       <div className="main-view">
-        <Navbar expand="lg" bg="#162b48" variant="dark" className="mainNavbar">
-        <Container>
-        <Navbar.Brand href="#myflix">My Flix</Navbar.Brand>
-            <Nav className="me-auto">
-            <Nav.Link href="#profile">Profile</Nav.Link>
-            <Nav.Link href="#update-profile">Update Profile</Nav.Link>
-            <Nav.Link href="#logout">Logout</Nav.Link>
-            </Nav>
-        </Container>
-        </Navbar>
-
+        
         <Row className="main-view justify-content-md-center">
         {selectedMovie
           ? (
