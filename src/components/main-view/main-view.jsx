@@ -62,7 +62,7 @@ export class MainView extends React.Component {
     return (
       <div className="main-view">
         
-        <Row className="main-view justify-content-md-center">
+        <Row>
         {selectedMovie
           ? (
             <Col md={8}>
