@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import "./movie-view.scss"
-
+import { Row, Col, Container } from 'react-bootstrap';
 export class MovieView extends React.Component {
 
   keypressCallback(event) {
@@ -20,6 +20,9 @@ export class MovieView extends React.Component {
     const { movie, onBackClick } = this.props;
 
     return (
+      <Container fluid className="moviesContainer">
+      <Row>
+      <Col>
       <div className="movie-view">
         <div className="movie-poster">
           <img src={movie.ImagePath} crossOrigin="true" />
@@ -52,12 +55,13 @@ export class MovieView extends React.Component {
           <span className="director">Death: </span>
           <span className="value">{movie.Director.Death}</span>
         </div>
-        <div className="movie-actors">
-          <span className="value">{movie.Actors}</span>
+        <div className="movie-button-div">
+          <button className="movie-button" onClick={() => { onBackClick(null); }}>Back</button>
         </div>
-        <button onClick={() => { onBackClick(null); }}>Back</button>
-
       </div>
+      </Col>
+      </Row>
+      </Container>
     );
   }
 }
