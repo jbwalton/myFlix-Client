@@ -13,7 +13,7 @@ export function RegistrationView(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('https://quiet-taiga-13679.herokuapp.com/users', {
+    axios.post('https://quiet-taiga-13679.herokuapp.com/users/new', {
       Username: username,
       Password: password,
       Email: email,
