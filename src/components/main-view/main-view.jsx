@@ -7,6 +7,7 @@ import { MovieView } from "../movie-view/movie-view";
 import { RegistrationView } from "../registration-view/registration-view";
 
 // React Bootstrap 
+import Row from 'react-bootstrap/Row';
 import { Navbar, Container, Nav, Row, Col } from 'react-bootstrap';
 export class MainView extends React.Component {
 
@@ -60,6 +61,7 @@ export class MainView extends React.Component {
     if (movies.length === 0) return <div className="main-view" />;
 
     return (
+      <Container>
       <div className="main-view">
         
         <Row className="main-view justify-content-md-center">
@@ -82,6 +84,7 @@ export class MainView extends React.Component {
         }
         </Row>
       </div>
+      </Container>
     );    
   }
 }
