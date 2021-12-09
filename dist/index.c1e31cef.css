@@ -1,4 +1,13 @@
+* {
+  box-sizing: border-box;
+}
 
+.main-view {
+  font-family: "Fira Sans", sans-serif;
+  background: #093138;
+  width: 100%;
+  display: inline-block;
+}
 
 .my-flix {
   color: steelblue;
