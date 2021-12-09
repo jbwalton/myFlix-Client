@@ -8,7 +8,8 @@ import { RegistrationView } from "../registration-view/registration-view";
 
 // React Bootstrap 
 import Row from 'react-bootstrap/Row';
-import { Navbar, Container, Nav, Row, Col } from 'react-bootstrap';
+import Col from 'react-bootstrap/Col';
+import {Container, Row, Col} from 'react-bootstrap';
 export class MainView extends React.Component {
 
   constructor() {
@@ -41,6 +42,13 @@ export class MainView extends React.Component {
     });
   }
 
+  /* user successful registration */
+  onRegistration(register) {
+    this.setState({
+      register,
+    });
+  }
+
   /* When a user successfully logs in, this function updates the `user` property in state to that *particular user*/
 
   
@@ -51,7 +59,9 @@ export class MainView extends React.Component {
   }
 
   render() {
-    const { movies, selectedMovie, user } = this.state;
+    const { movies, selectedMovie, user, register } = this.state;
+
+    if (!register) return (<RegistrationView onRegistration={(register) => this.onRegistration(register)}/>);
 
     /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details 
     are *passed as a prop to the LoginView*/
@@ -61,7 +71,6 @@ export class MainView extends React.Component {
     if (movies.length === 0) return <div className="main-view" />;
 
     return (
-      <Container>
       <div className="main-view">
         
         <Row className="main-view justify-content-md-center">
@@ -84,7 +93,6 @@ export class MainView extends React.Component {
         }
         </Row>
       </div>
-      </Container>
     );    
   }
 }
