@@ -1,0 +1,32 @@
+.moviesContainer {
+    background: #101e3b;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .movie-view {
+    margin-top: 50px;
+    color: rgb(54, 138, 68);
+  }
+  
+  .movie-poster {
+    text-align: center;
+  }
+  .movie-title, .movie-description, .movie-genre, .movie-director, .director-bio, .director-birth, .director-death  { 
+    color: rgb(44, 160, 64);
+    font-size: 20px;
+    font-weight: 400;
+  }
+  
+  .movie-button-div{
+    text-align: center;
+    margin: 0 auto;
+    width: 200px;
+  }
+  .movie-button {
+    margin-top: 20px;
+    width: 100%;
+    background-color: rgb(109, 59, 59);
+  }
+  
+  
