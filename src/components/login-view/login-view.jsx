@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
+import { Navbar, Nav, Form, Button, Card, CardGroup, Container, Row, Col } from 'react-bootstrap';
+
 
 
 import PropTypes from 'prop-types';
@@ -18,22 +19,39 @@ export function LoginView(props) {
   };
 
   return (
-    <Form>
-      <Form.Group controlId="formUsername">
-        <Form.Label>Username:</Form.Label>
-        <Form.Control type="text" onChange={e => setUsername(e.target.value)} />
-      </Form.Group>
+    <Container fluid className="loginContainer" >
 
-      <Form.Group controlId="formPassword">
-        <Form.Label>Password:</Form.Label>
-        <Form.Control type="password" onChange={e => setPassword(e.target.value)} />
-      </Form.Group>
-      <Button variant="primary" type="submit" onClick={handleSubmit}>
-        Submit
-      </Button>
-      <Button variant="primary" type="register" onClick={handleSubmit}>
-        Register
-      </Button>
-    </Form>
+      <Navbar bg="navColor" variant="dark" expand="lg">
+        <Container fluid>
+          <Navbar.Brand href="#home">myMovies</Navbar.Brand>
+          <Nav className="me-auto">
+              <Nav.Link href="#register">Register</Nav.Link>
+          </Nav>
+        </Container>
+      </Navbar>
+      <Card className="loginCard">
+        <Card.Body>
+          <Card.Title className="text-center">Welcome to myMovies.</Card.Title>
+          <Card.Subtitle className="mb-2 text-muted text-center">Please Login</Card.Subtitle>
+          
+          <Form>
+            <Form.Group controlId="formUsername">
+              <Form.Label>Username:</Form.Label>
+              <Form.Control type="text" onChange={e => setUsername(e.target.value)} />
+            </Form.Group>
+
+            <Form.Group controlId="formPassword">
+              <Form.Label>Password:</Form.Label>
+              <Form.Control type="password" onChange={e => setPassword(e.target.value)} />
+            </Form.Group>
+            
+            <Button variant="primary" type="submit" onClick={handleSubmit}>
+              Login
+            </Button>
+            
+          </Form>
+        </Card.Body>  
+      </Card>
+    </Container>
   );
 }
