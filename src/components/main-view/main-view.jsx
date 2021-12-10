@@ -9,7 +9,7 @@ import { RegistrationView } from "../registration-view/registration-view";
 // React Bootstrap 
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import {Container, Row, Col} from 'react-bootstrap';
+import {Container, Row, Col, Navbar, Nav} from 'react-bootstrap';
 export class MainView extends React.Component {
 
   constructor() {
@@ -61,7 +61,7 @@ export class MainView extends React.Component {
   render() {
     const { movies, selectedMovie, user, register } = this.state;
 
-    if (!register) return (<RegistrationView onRegistration={(register) => this.onRegistration(register)}/>);
+    //if (!register) return (<RegistrationView onRegistration={(register) => this.onRegistration(register)}/>);
 
     /* If there is no user, the LoginView is rendered. If there is a user logged in, the user details 
     are *passed as a prop to the LoginView*/
@@ -72,16 +72,25 @@ export class MainView extends React.Component {
 
     return (
       <div className="main-view">
-        
-        <Row className="main-view justify-content-md-center">
+        <Navbar bg="navColor" variant="dark" expand="lg">
+                <Container fluid>
+                  <Navbar.Brand href="#home">myMovies</Navbar.Brand>
+                  <Nav className="me-auto">
+                    <Nav.Link href="#home">Movies</Nav.Link>
+                    <Nav.Link href="#user">Profile</Nav.Link>
+                    <Nav.Link href="#logout">Logout</Nav.Link>
+                  </Nav>
+                </Container>
+        </Navbar>
+        <Row className="justify-content-lg-center">
         {selectedMovie
           ? (
-            <Col md={8}>
+            <Col lg={9}>
               <MovieView movie={selectedMovie} onBackClick={newSelectedMovie => { this.setSelectedMovie(newSelectedMovie); }} />
             </Col>
           )
           : movies.map((movie) => (
-            <Col md={3} key={movie._id}>
+            <Col lg={3} md={4} sm={6} key={movie._id}>
               <MovieCard
                 movie={movie}
                 onMovieClick={(newSelectedMovie) => {
